@@ -29,10 +29,10 @@ redis-server
 
 # Open three terminals (one for each process):
 # Terminal 1: Start Celery Beat for periodic tasks scheduling
-celery -A main.celery beat --loglevel=info
+celery -A main.celery beat --loglevel=info or python -m celery -A main.celery beat
 
 # Terminal 2: Start Celery Worker to execute tasks
-celery -A main.celery worker --loglevel=info
+celery -A main.celery worker --loglevel=info or python -m celery -A main.celery worker --loglevel=info
 
 # Terminal 3: Run the FastAPI application
 uvicorn main:app --reload
